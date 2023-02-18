@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="547.0" prefWidth="772.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Controllers.ISeconnecterProfSController">
+   <children>
+      <Label layoutX="149.0" layoutY="32.0" text="Créer un compte professionnel de santé">
+         <font>
+            <Font name="Britannic Bold" size="30.0" />
+         </font>
+      </Label>
+      <Pane layoutX="26.0" layoutY="88.0" prefHeight="374.0" prefWidth="361.0" style="-fx-background-color: A1E3E4;">
+         <children>
+            <Label layoutX="55.0" layoutY="6.0" text="Nom">
+               <font>
+                  <Font name="Bodoni MT" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="52.0" layoutY="126.0" text="Téléphone">
+               <font>
+                  <Font name="Bodoni MT" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="50.0" layoutY="191.0" text="Mot de passe">
+               <font>
+                  <Font name="Bodoni MT" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_Nom" layoutX="50.0" layoutY="32.0" prefHeight="31.0" prefWidth="225.0" promptText="Nom" />
+            <TextField fx:id="txt_Email" layoutX="50.0" layoutY="92.0" prefHeight="31.0" prefWidth="225.0" promptText="Email" />
+            <TextField fx:id="txt_Tel" layoutX="48.0" layoutY="152.0" prefHeight="31.0" prefWidth="225.0" promptText="Téléphone" />
+            <Label layoutX="53.0" layoutY="69.0" text="E-mail">
+               <font>
+                  <Font name="Bodoni MT" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_mdp" layoutX="46.0" layoutY="214.0" prefHeight="31.0" prefWidth="225.0" promptText="Mot de passe" />
+            <Label layoutX="50.0" layoutY="250.0" text="Spécialité">
+               <font>
+                  <Font name="Bodoni MT" size="18.0" />
+               </font>
+            </Label>
+            <ChoiceBox layoutX="48.0" layoutY="275.0" prefHeight="31.0" prefWidth="225.0" />
+            <Button fx:id="btn_image" layoutX="81.0" layoutY="321.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="146.0" style="-fx-background-color: #00C2CB;" text="Choisir photo...">
+               <font>
+                  <Font name="Britannic Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <ImageView fitHeight="134.0" fitWidth="142.0" layoutX="11.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/6-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_valider" layoutX="600.0" layoutY="477.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="146.0" style="-fx-background-color: #A1E3E4;" text="Valider">
+         <font>
+            <Font name="Britannic Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_retour" layoutX="26.0" layoutY="477.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="146.0" style="-fx-background-color: #A1E3E4;" text="Retour">
+         <font>
+            <Font name="Britannic Bold" size="15.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="270.0" fitWidth="337.0" layoutX="408.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/expert-comptable-professionnel-sante-tassin-demi-lune-francheville-0b738-360da-1000x_-90-scale-ffffff-wCopyright.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
