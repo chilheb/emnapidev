@@ -14,11 +14,19 @@ import java.util.Objects;
 public class User {
 
     private String nomUser ;
-    private String photoUser ; 
     private int phoneUser ; 
     private String emailUser ; 
     private String AdrUser ; 
     private String RoleUser ;
+    private String mdp ; 
+
+    public String getMdp() {
+        return mdp;
+    }
+
+    public void setMdp(String mdp) {
+        this.mdp = mdp;
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -38,9 +46,7 @@ public class User {
         if (!Objects.equals(this.nomUser, other.nomUser)) {
             return false;
         }
-        if (!Objects.equals(this.photoUser, other.photoUser)) {
-            return false;
-        }
+      
         if (!Objects.equals(this.emailUser, other.emailUser)) {
             return false;
         }
@@ -55,7 +61,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" + "nomUser=" + nomUser + ", photoUser=" + photoUser + ", phoneUser=" + phoneUser + ", emailUser=" + emailUser + ", AdrUser=" + AdrUser + ", RoleUser=" + RoleUser + '}';
+        return nomUser +" " + phoneUser + " " + emailUser +" " + AdrUser + " " + RoleUser+ "\n" ;
     }
 
     public String getNomUser() {
@@ -66,13 +72,7 @@ public class User {
         this.nomUser = nomUser;
     }
 
-    public String getPhotoUser() {
-        return photoUser;
-    }
-
-    public void setPhotoUser(String photoUser) {
-        this.photoUser = photoUser;
-    }
+   
 
     public int getPhoneUser() {
         return phoneUser;
@@ -106,14 +106,17 @@ public class User {
         this.RoleUser = RoleUser;
     }
 
-    public User(String nomUser, String photoUser, int phoneUser, String emailUser, String AdrUser, String RoleUser) {
+    public User(String nomUser, int phoneUser, String emailUser, String AdrUser, String mdp , String RoleUser) {
         this.nomUser = nomUser;
-        this.photoUser = photoUser;
         this.phoneUser = phoneUser;
         this.emailUser = emailUser;
         this.AdrUser = AdrUser;
         this.RoleUser = RoleUser;
+        this.mdp=mdp; 
     }
-    
+    public User(String RoleUser){
+        
+        this.RoleUser = RoleUser;
+    }
     
 }

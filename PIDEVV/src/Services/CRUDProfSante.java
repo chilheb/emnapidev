@@ -23,14 +23,14 @@ import Tools.MyConnection;
 public class CRUDProfSante {
      public void addProfSante(ProfSante P) {
         try {
-                String requete = "INSERT INTO prof_sante (Nom,Photo,Phone,Email,Adresse,Titre)" + "VALUES (?,?,?,?,?,?)";
+                String requete = "INSERT INTO prof_sante (Nom,Phone,Email,Adresse,Titre,Mdp)" + "VALUES (?,?,?,?,?,?)";
             PreparedStatement pst = new MyConnection().cn.prepareStatement(requete);
             pst.setString(1, P.getNomProfS());
-            pst.setString(2, P.getPhotoProfS());
-            pst.setInt(3, P.getPhoneProfS());
-            pst.setString(4, P.getEmailProfS());
-            pst.setString(5, P.getAdrProfS());
-            pst.setString(5, P.getTitreProfS());
+            pst.setInt(2, P.getPhoneProfS());
+            pst.setString(3, P.getEmailProfS());
+            pst.setString(4, P.getAdrProfS());
+             pst.setString(5,P.getTitreProfS());
+             pst.setString(6, P.getMdp());
             pst.executeUpdate();
 
             System.out.println("Professionnel de santé  ajouté!");
@@ -46,10 +46,9 @@ public class CRUDProfSante {
             PreparedStatement pst = new MyConnection().cn.prepareStatement(requete);
             ResultSet rs = pst.executeQuery();
 
-            while (rs.next()) {
-                
-                
-                list.add(new ProfSante(rs.getString("nomProfS"),rs.getString("photoProfS"),rs.getInt("phoneProfS"),rs.getString("emailProfS"),rs.getString("AdrProfS"),rs.getString("titreProfS"))); 
+            while (rs.next()) {   
+           
+                list.add(new ProfSante(rs.getString("nomProfS"),rs.getInt("phoneProfS"),rs.getString("emailProfS") ,rs.getString("AdrProfS") ,rs.getString("titreProfS"),"ProfSante", rs.getString("Mdp"))); 
             }
 
         } catch (SQLException ex) {
@@ -61,14 +60,13 @@ public class CRUDProfSante {
     public void editProfSante(ProfSante P) {
         try {
 
-            String requete = "UPDATE prof_sante  Nom= ? ,Photo= ? ,Phone= ? ,Email = ? ,Adresse= ? " ; 
+            String requete = "UPDATE prof_sante  Nom= ? ,Phone= ? ,Email = ? ,Adresse= ? " ; 
             PreparedStatement pst = new MyConnection().cn.prepareStatement(requete);
             pst.setString(1, P.getNomProfS());
-            pst.setString(2, P.getPhotoProfS());
-            pst.setInt(3, P.getPhoneProfS());
-            pst.setString(4, P.getEmailUser());
-            pst.setString(5, P.getAdrProfS());
-            
+            pst.setInt(2, P.getPhoneProfS());
+            pst.setString(3, P.getEmailUser());
+            pst.setString(4, P.getAdrProfS());
+          
         
             pst.executeUpdate();
 

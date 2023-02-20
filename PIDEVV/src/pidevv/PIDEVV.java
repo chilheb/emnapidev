@@ -27,9 +27,9 @@ public class PIDEVV extends Application {
       @Override
     public void start(Stage stage) {
         
-         Parent root;
+      Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/Interfaces/IPage.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/Interfaces/IEspaceAdmin.fxml"));
             Scene scene = new Scene(root);
             
         stage.setScene(scene);

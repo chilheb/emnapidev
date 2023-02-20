@@ -12,15 +12,34 @@ import java.util.Objects;
  * @author DELL
  */
 public class Pharmacien extends ProfSante {
-  private String nomPharmacien ;
-    private String photoPharmacien ; 
+
+    public Pharmacien(String nomPharmacien, int phonePharmacien, String emailPharmacien, String AdrPharmacien, String mdp, String RoleUser) {
+        super(RoleUser);
+        this.nomPharmacien = nomPharmacien;
+        this.phonePharmacien = phonePharmacien;
+        this.emailPharmacien = emailPharmacien;
+        this.AdrPharmacien = AdrPharmacien;
+        this.Mdp = Mdp;
+    }
+
+   
+
+    
+  private String nomPharmacien ; 
     private int phonePharmacien ; 
     private String emailPharmacien ; 
     private String AdrPharmacien ; 
+    private String Mdp ; 
 
-    public Pharmacien(String nomUser, String photoUser, int phoneUser, String emailUser, String AdrUser, String RoleUser) {
-        super(nomUser, photoUser, phoneUser, emailUser, AdrUser, RoleUser);
+    public String getMdp() {
+        return Mdp;
     }
+
+    public void setMdp(String Mdp) {
+        this.Mdp = Mdp;
+    }
+
+   
 
     @Override
     public boolean equals(Object obj) {
@@ -40,9 +59,7 @@ public class Pharmacien extends ProfSante {
         if (!Objects.equals(this.nomPharmacien, other.nomPharmacien)) {
             return false;
         }
-        if (!Objects.equals(this.photoPharmacien, other.photoPharmacien)) {
-            return false;
-        }
+       
         if (!Objects.equals(this.emailPharmacien, other.emailPharmacien)) {
             return false;
         }
@@ -54,7 +71,7 @@ public class Pharmacien extends ProfSante {
 
     @Override
     public String toString() {
-        return "Pharmacien{" + "nomPharmacien=" + nomPharmacien + ", photoPharmacien=" + photoPharmacien + ", phonePharmacien=" + phonePharmacien + ", emailPharmacien=" + emailPharmacien + ", AdrPharmacien=" + AdrPharmacien + '}';
+        return "Pharmacien{" + "nomPharmacien=" + nomPharmacien  + ", phonePharmacien=" + phonePharmacien + ", emailPharmacien=" + emailPharmacien + ", AdrPharmacien=" + AdrPharmacien + '}';
     }
 
     public String getNomPharmacien() {
@@ -65,13 +82,6 @@ public class Pharmacien extends ProfSante {
         this.nomPharmacien = nomPharmacien;
     }
 
-    public String getPhotoPharmacien() {
-        return photoPharmacien;
-    }
-
-    public void setPhotoPharmacien(String photoPharmacien) {
-        this.photoPharmacien = photoPharmacien;
-    }
 
     public int getPhonePharmacien() {
         return phonePharmacien;

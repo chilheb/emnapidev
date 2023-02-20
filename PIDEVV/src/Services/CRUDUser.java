@@ -23,14 +23,14 @@ import Tools.MyConnection;
 public class CRUDUser {
      public void addUser(User P) {
         try {
-                String requete = "INSERT INTO user (Nom,Photo,Phone,Email,Adresse,Role)" + "VALUES (?,?,?,?,?,?)";
+                String requete = "INSERT INTO user (Nom,Phone,Email,Adresse,Role,mdp)" + "VALUES (?,?,?,?,?,?)";
             PreparedStatement pst = new MyConnection().cn.prepareStatement(requete);
-            pst.setString(1, P.getNomUser());
-            pst.setString(2, P.getPhotoUser());
-            pst.setInt(3, P.getPhoneUser());
-            pst.setString(4,P.getEmailUser());
-            pst.setString(5, P.getAdrUser());
-            pst.setString(6, P.getRoleUser());
+            pst.setString(1,P.getNomUser());
+            pst.setInt(2,P.getPhoneUser());
+            pst.setString(3,P.getEmailUser());
+            pst.setString(4, P.getAdrUser());
+            pst.setString(5, P.getRoleUser());
+            pst.setString(6, P.getMdp());
             pst.executeUpdate();
 
             System.out.println("Utilisateur  ajouté!");
@@ -47,9 +47,17 @@ public class CRUDUser {
             ResultSet rs = pst.executeQuery();
 
             while (rs.next()) {
-                
-                
-                list.add(new User(rs.getString("nomUser"),rs.getString("photoUser"),rs.getInt("phoneUser"),rs.getString("emailUser"),rs.getString("AdrUser"),rs.getString("RoleUser"))); 
+             //  list=(ObservableList<User>)rs ; 
+                    
+            //  rs.toString() ; 
+              // ObservableList<User> list = getList(rs);
+               User u =new User(rs.getString("Nom"),rs.getInt("Phone"),rs.getString("Email"),rs.getString("Adresse"),rs.getString("Role"),rs.getString("mdp"));
+               
+                u.setPhoneUser(rs.getInt("Phone"));
+                list.add(u) ; 
+            
+            // ObservableList <User> list = getList(rs);
+             //  list.add(new User(rs.getString("Nom"),rs.getInt("Phone"),rs.getString("Email"),rs.getString("Adresse"),rs.getString("Role"),rs.getString("mdp"))); 
             }
 
         } catch (SQLException ex) {
@@ -61,15 +69,15 @@ public class CRUDUser {
     public void editUser(User P) {
         try {
 
-            String requete = "UPDATE user  Nom= ? ,Photo= ? ,Phone= ? ,Email = ? ,Adresse= ? , Role= ?" ; 
+            String requete = "UPDATE user  Nom= ? ,Phone= ? ,Email = ? ,Adresse= ? , Role= ? , Mdp= ?"; 
             PreparedStatement pst = new MyConnection().cn.prepareStatement(requete);
             pst.setString(1, P.getNomUser());
-            pst.setString(2, P.getPhotoUser());
-            pst.setInt(3, P.getPhoneUser());
-            pst.setString(4,P.getEmailUser());
-            pst.setString(5, P.getAdrUser());
-            pst.setString(6, P.getRoleUser());
-            
+            pst.setInt(2, P.getPhoneUser());
+            pst.setString(3,P.getEmailUser());
+            pst.setString(4, P.getAdrUser());
+            pst.setString(5, P.getRoleUser());
+             pst.setString(6, P.getMdp());
+        
         
             pst.executeUpdate();
 

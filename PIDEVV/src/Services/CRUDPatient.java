@@ -6,6 +6,7 @@
 package Services;
 
 import Entities.Patient;
+import Entities.Pharmacie;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,6 +16,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import Tools.MyConnection;
 
+
 /**
  *
  * @author DELL
@@ -22,14 +24,15 @@ import Tools.MyConnection;
 public class CRUDPatient {
    public void addPatient(Patient P) {
         try {
-            String requete = "INSERT INTO patient (Nom,Photo,Phone,Email,Adresse)" + "VALUES (?,?,?,?,?)";
+            
+            String requete = "INSERT INTO patient (Nom,Phone,Email,Adresse,Mdp,Role)" + "VALUES (?,?,?,?,?,?)";
             PreparedStatement pst = new MyConnection().cn.prepareStatement(requete);
             pst.setString(1, P.getNomPatient());
-            pst.setString(2, P.getPhotoPatient());
-            pst.setInt(3, P.getPhonePatient());
-            pst.setString(4, P.getEmailPatient());
-            pst.setString(5, P.getAdrPatient());
-          
+            pst.setInt(2, P.getPhonePatient());
+            pst.setString(3, P.getEmailPatient());
+            pst.setString(4, P.getAdrPatient());
+            pst.setString(5, P.getMdp());
+            pst.setString(6,"Patient");
             pst.executeUpdate();
 
             System.out.println("Patient ajouté!");
@@ -38,7 +41,7 @@ public class CRUDPatient {
         }
     }
 
-    public ObservableList<Patient> showPatient() {
+  public ObservableList<Patient> showPatient() {
         ObservableList<Patient> list = FXCollections.observableArrayList();
         try {
             String requete = "SELECT * FROM patient";
@@ -48,22 +51,21 @@ public class CRUDPatient {
             while (rs.next()) {
                 
                 
-                list.add(new Patient(rs.getString("nomPatient"),rs.getString("photoPatient"),rs.getInt("phonePatient"),rs.getString("emailPatient"),rs.getString("AdrPatient"),rs.getString("RoleUser"))); 
+                list.add(new Patient(rs.getString("nomPatient"),rs.getInt("phonePatient"),rs.getString("emailPatient"),rs.getString("AdrPatient"),rs.getString("mdp"),"Patient")); 
             }
 
         } catch (SQLException ex) {
             Logger.getLogger(CRUDPatient.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
-    }
+    }   
 
     public void editPatient(Patient P) {
         try {
 
-            String requete = "UPDATE patient  Nom= ? ,Photo= ? ,Phone= ? ,Email = ? ,Adresse= ? " ; 
+            String requete = "UPDATE patient  Nom= ? ,Phone= ? ,Email = ? ,Adresse= ? " ; 
             PreparedStatement pst = new MyConnection().cn.prepareStatement(requete);
             pst.setString(1, P.getNomPatient());
-            pst.setString(2, P.getPhotoPatient());
             pst.setInt(3, P.getPhonePatient());
             pst.setString(4, P.getEmailPatient());
             pst.setString(5, P.getAdrPatient());
@@ -91,5 +93,48 @@ public class CRUDPatient {
         }
 
     }
+    //chercher patient par tel et retourner le patient 
+     public Patient chercherPatient(int Phone) {
+      Patient Patient = null ; 
+        try {
+            String requete = "SELECT * FROM patient WHERE Phone = ?";
+            PreparedStatement pst   = new MyConnection().cn.prepareStatement(requete);
+            pst.setInt(1, Phone);
+             ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                 Patient = new Patient(rs.getString("Nom"),rs.getInt("Phone"),rs.getString("Email"),rs.getString("Adresse"),rs.getString("Mdp"),rs.getString("Role"));
+              
+        }  
+        } catch (SQLException ex) {
+            Logger.getLogger(CRUDPatient.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+         return Patient ;  
+
+    }
+        public boolean chercherPatientInt(int Phone,String Mdp ) {
+        boolean test = false ; 
+        try {
+            String requete = "SELECT * FROM patient WHERE Phone =? AND Mdp =? ";
+            PreparedStatement pst   = new MyConnection().cn.prepareStatement(requete);
+            pst.setInt(1, Phone);
+            pst.setString(2,Mdp);
+          
+            ResultSet rs = pst.executeQuery();
+           
+               while (rs.next()) {
+               test=true ; 
+
+       }  
+   
+        } catch (SQLException ex) {
+            // System.out.println("fin"); 
+            Logger.getLogger(CRUDPatient.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return test;}
+
+    
+
 
 }  

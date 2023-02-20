@@ -3,15 +3,26 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/Tools/MyConnection.java</file>
+            <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/Entities/ProfSante.java</file>
+            <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/Services/CRUDProfSante.java</file>
+            <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/Controllers/IPharmacienController.java</file>
             <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/Controllers/ISeconnecterPatientController.java</file>
-            <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/Controllers/IMenuController.java</file>
-            <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/Interfaces/IConnexionPatient.fxml</file>
-            <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/Interfaces/ISeconnecterPatient.fxml</file>
+            <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/Services/CRUDPharmacien.java</file>
+            <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/Services/CRUDPatient.java</file>
+            <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/Entities/Patient.java</file>
+            <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/Interfaces/IPharmacien.fxml</file>
+            <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/Entities/Pharmacie.java</file>
+            <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/Tools/MyConnection.java</file>
+            <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/Services/CRUDUser.java</file>
+            <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/Services/CRUDPharmacie.java</file>
             <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/Controllers/IConnexionPatientController.java</file>
-            <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/Controllers/Page1Controller.java</file>
+            <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/Controllers/ISeconnecterProfSController.java</file>
+            <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/Controllers/IPageController.java</file>
+            <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/Controllers/IEspaceAdminController.java</file>
             <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/pidevv/PIDEVV.java</file>
-            <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/Interfaces/IMenu.fxml</file>
+            <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/Entities/User.java</file>
+            <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/Entities/Pharmacien.java</file>
+            <file>file:/C:/Users/DELL/OneDrive/Bureau/JAVA/PIDEVV/src/Controllers/IMenuAdminController.java</file>
         </group>
     </open-files>
 </project-private>

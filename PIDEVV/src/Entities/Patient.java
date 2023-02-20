@@ -12,11 +12,32 @@ import java.util.Objects;
  * @author DELL
  */
 public class Patient extends User{
-    private String nomPatient ;
-    private String photoPatient ; 
+
+    public Patient(String nomPatient, int phonePatient, String emailPatient, String AdrPatient, String mdp, String RoleUser) {
+        super(RoleUser);
+        this.nomPatient = nomPatient;
+        this.phonePatient = phonePatient;
+        this.emailPatient = emailPatient;
+        this.AdrPatient = AdrPatient;
+        this.mdp = mdp;
+    }
+
+  
+     private String nomPatient ;
     private int phonePatient ; 
     private String emailPatient ; 
     private String AdrPatient ;
+    private String mdp ; 
+
+
+    public String getMdp() {
+        return mdp;
+    }
+
+    public void setMdp(String mdp) {
+        this.mdp = mdp;
+    }
+
    
     @Override
     public boolean equals(Object obj) {
@@ -36,9 +57,7 @@ public class Patient extends User{
         if (!Objects.equals(this.nomPatient, other.nomPatient)) {
             return false;
         }
-        if (!Objects.equals(this.photoPatient, other.photoPatient)) {
-            return false;
-        }
+       
         if (!Objects.equals(this.emailPatient, other.emailPatient)) {
             return false;
         }
@@ -50,7 +69,7 @@ public class Patient extends User{
 
     @Override
     public String toString() {
-        return "Patient{" + "nomPatient=" + nomPatient + ", photoPatient=" + photoPatient + ", phonePatient=" + phonePatient + ", emailPatient=" + emailPatient + ", AdrPatient=" + AdrPatient + '}';
+        return "Patient{" + "nomPatient=" + nomPatient + ", phonePatient=" + phonePatient + ", emailPatient=" + emailPatient + ", AdrPatient=" + AdrPatient + '}';
     }
 
     public String getNomPatient() {
@@ -61,13 +80,7 @@ public class Patient extends User{
         this.nomPatient = nomPatient;
     }
 
-    public String getPhotoPatient() {
-        return photoPatient;
-    }
-
-    public void setPhotoPatient(String photoPatient) {
-        this.photoPatient = photoPatient;
-    }
+  
 
     public int getPhonePatient() {
         return phonePatient;
@@ -94,8 +107,5 @@ public class Patient extends User{
     }
       
    
-    public Patient(String nomUser, String photoUser, int phoneUser, String emailUser, String AdrUser, String RoleUser) {
-        super(nomUser, photoUser, phoneUser, emailUser, AdrUser, RoleUser);
-    }
-    
+ 
 }

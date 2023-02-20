@@ -22,15 +22,15 @@ import Tools.MyConnection;
  */
 public class CRUDPharmacien {
    public void addPharmacien(Pharmacien P) {
-        try {
-                String requete = "INSERT INTO pharmacien (Nom,Photo,Phone,Email,Adresse)" + "VALUES (?,?,?,?,?)";
+        try {  
+                String requete = "INSERT INTO pharmacien (Nom,Phone,Email,Adresse,Role,Mdp)" + "VALUES (?,?,?,?,?,?)";
             PreparedStatement pst = new MyConnection().cn.prepareStatement(requete);
             pst.setString(1, P.getNomPharmacien());
-            pst.setString(2, P.getPhotoPharmacien());
-            pst.setInt(3, P.getPhonePharmacien());
-            pst.setString(4, P.getEmailPharmacien());
-            pst.setString(5, P.getAdrPharmacien());
-           
+            pst.setInt(2, P.getPhonePharmacien());
+            pst.setString(3, P.getEmailPharmacien());
+            pst.setString(4, P.getAdrPharmacien());
+            pst.setString(5,"Pharmacien");
+             pst.setString(6,P.getMdp());
             pst.executeUpdate();
 
             System.out.println("Pharmacien ajouté!");
@@ -49,7 +49,7 @@ public class CRUDPharmacien {
             while (rs.next()) {
                 
                 
-                list.add(new Pharmacien(rs.getString("nomPharmacien"),rs.getString("photoPharmacien"),rs.getInt("phonePharmacien"),rs.getString("emailPharmacien"),rs.getString("AdrPharmacien"),rs.getString("RoleUser"))); 
+                list.add(new Pharmacien(rs.getString("nomPharmacien"),rs.getInt("phonePharmacien"),rs.getString("emailPharmacien"),rs.getString("AdrPharmacien"),rs.getString("RoleUser"),rs.getString("Mdp"))); 
             }
 
         } catch (SQLException ex) {
@@ -61,13 +61,14 @@ public class CRUDPharmacien {
     public void editPharmacien(Pharmacien P) {
         try {
 
-            String requete = "UPDATE pharmacien  Nom= ? ,Photo= ? ,Phone= ? ,Email = ? ,Adresse= ? " ; 
+            String requete = "UPDATE pharmacien  Nom= ? ,Phone= ? ,Email = ? ,Adresse= ? ,Role= ? , Mdp= ? " ; 
             PreparedStatement pst = new MyConnection().cn.prepareStatement(requete);
             pst.setString(1, P.getNomPharmacien());
-            pst.setString(2, P.getPhotoPharmacien());
-            pst.setInt(3, P.getPhonePharmacien());
-            pst.setString(4, P.getEmailPharmacien());
-            pst.setString(5, P.getAdrPharmacien());
+            pst.setInt(2, P.getPhonePharmacien());
+            pst.setString(3, P.getEmailPharmacien());
+            pst.setString(4, P.getAdrPharmacien());
+            pst.setString(5, "Pharmacien");
+            pst.setString(6, P.getMdp());
             
         
             pst.executeUpdate();

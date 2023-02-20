@@ -23,11 +23,11 @@ import Tools.MyConnection;
 public class CRUDPharmacie {
   public void addPharmacie(Pharmacie P) {
         try {
-                String requete = "INSERT INTO pharmacie(Nom,Photo,Phone,Email,Adresse)" + "VALUES (?,?,?,?,?)";
+                String requete = "INSERT INTO pharmacie(Nom,Emplacement,NumTel)" + "VALUES (?,?,?)";
             PreparedStatement pst = new MyConnection().cn.prepareStatement(requete);
             pst.setString(1, P.getNomPharmacie());
             pst.setString(2, P.getEmplacement());
-            
+            pst.setInt(3,P.getNumTel());
            
             pst.executeUpdate();
 

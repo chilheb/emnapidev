@@ -12,15 +12,44 @@ import java.util.Objects;
  * @author DELL
  */
 public class ProfSante extends User {
-private String nomProfS ;
-    private String photoProfS ; 
+ private String nomProfS ;
     private int phoneProfS ; 
     private String emailProfS ; 
     private String AdrProfS ; 
     private String titreProfS ; 
+    private String Mdp ; 
+    
+    
+    public ProfSante(String RoleUser) {
+        super(RoleUser);
+    }
+
+    public ProfSante(String nomProfS, int phoneProfS, String emailProfS, String AdrProfS,String Titre ,String RoleUser,String Mdp) {
+        super(RoleUser);
+        this.nomProfS = nomProfS;
+        this.phoneProfS = phoneProfS;
+        this.emailProfS = emailProfS;
+        this.AdrProfS = AdrProfS;
+        this.titreProfS = AdrProfS;
+        this.Mdp=Mdp ; 
+    }
+
+    
+   
+  
+    
+ @Override
+      public String getMdp() {
+        return Mdp;
+    }
+
+ @Override
+    public void setMdp(String mdp) {
+        this.Mdp = mdp;
+    }
     @Override
     public String toString() {
-        return "ProfSante{" + "nomProfS=" + nomProfS + ", photoProfS=" + photoProfS + ", phoneProfS=" + phoneProfS + ", emailProfS=" + emailProfS + ", AdrProfS=" + AdrProfS + ", titreProfS=" + titreProfS + '}';
+        return "ProfSante{" + "nomProfS=" + nomProfS + ", phoneProfS=" + phoneProfS + ", emailProfS=" + emailProfS + ", AdrProfS=" + AdrProfS + ", titreProfS=" + titreProfS + '}';
     }
 
    
@@ -43,9 +72,10 @@ private String nomProfS ;
         if (!Objects.equals(this.nomProfS, other.nomProfS)) {
             return false;
         }
-        if (!Objects.equals(this.photoProfS, other.photoProfS)) {
+           if (!Objects.equals(this.Mdp, other.Mdp)) {
             return false;
         }
+       
         if (!Objects.equals(this.emailProfS, other.emailProfS)) {
             return false;
         }
@@ -66,13 +96,7 @@ private String nomProfS ;
         this.nomProfS = nomProfS;
     }
 
-    public String getPhotoProfS() {
-        return photoProfS;
-    }
-
-    public void setPhotoProfS(String photoProfS) {
-        this.photoProfS = photoProfS;
-    }
+  
 
     public int getPhoneProfS() {
         return phoneProfS;
@@ -107,8 +131,6 @@ private String nomProfS ;
     }
     
 
-    public ProfSante(String nomUser, String photoUser, int phoneUser, String emailUser, String AdrUser, String RoleUser) {
-        super(nomUser, photoUser, phoneUser, emailUser, AdrUser, RoleUser);
-    }
+  
     
 }

@@ -44,12 +44,12 @@
                   <Image url="@../Images/e-mail.png" />
                </image>
             </ImageView>
-            <Label layoutX="81.0" layoutY="179.0" text="E-mail">
+            <Label layoutX="81.0" layoutY="179.0" text="Télephone">
                <font>
                   <Font name="Bodoni MT" size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txt_email" layoutX="80.0" layoutY="204.0" prefHeight="31.0" prefWidth="252.0" promptText="Adresse mail" />
+            <TextField fx:id="txt_num" layoutX="80.0" layoutY="204.0" prefHeight="31.0" prefWidth="252.0" promptText="Numéro tel" />
             <ImageView fitHeight="78.0" fitWidth="52.0" layoutX="19.0" layoutY="293.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Images/mot-de-passe.png" />
@@ -61,7 +61,7 @@
                </font>
             </Label>
             <PasswordField fx:id="txt_mdp" layoutX="80.0" layoutY="304.0" prefHeight="31.0" prefWidth="252.0" promptText="Mot de passe" />
-            <Button fx:id="btn_Seconnecter" layoutX="121.0" layoutY="390.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="140.0" style="-fx-background-color: #00C2CB;" text="Se connecter" textFill="WHITE">
+            <Button fx:id="btn_Seconnecter" layoutX="121.0" layoutY="390.0" mnemonicParsing="false" onAction="#Seconnecter" prefHeight="46.0" prefWidth="140.0" style="-fx-background-color: #00C2CB;" text="Se connecter" textFill="WHITE">
                <font>
                   <Font name="Britannic Bold" size="18.0" />
                </font>
