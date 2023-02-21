@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="scene1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1100.0" style="-fx-background-color: #ffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.projet_sante.gui.EspaceMedecinController">
+   <children>
+      <Label fx:id="label1" layoutX="545.0" layoutY="25.0" prefHeight="46.0" prefWidth="390.0" text="ESPACE  EVENEMENT" textFill="#009688">
+         <font>
+            <Font name="Georgia" size="35.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutY="-4.0" prefHeight="856.0" prefWidth="308.0" style="-fx-background-color: #009688;">
+         <children>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutX="-2.0" layoutY="221.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="310.0" style="-fx-background-color: #009688;" text="Action Volontaire" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutX="-2.0" layoutY="293.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="310.0" style="-fx-background-color: #009688;" text="Evenement" textFill="WHITE">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="idImg" fitHeight="200.0" fitWidth="200.0" layoutX="53.0" layoutY="21.0">
+               <image>
+                  <Image url="@../../../../../Downloads/1-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Button fx:id="idbuttajout" layoutX="334.0" layoutY="770.0" mnemonicParsing="false" onAction="#handleAjouter" prefHeight="43.0" prefWidth="200.0" style="-fx-background-radius: 30; -fx-background-color: #009688;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="24.0" />
+         </font>
+      </Button>
+      <Label layoutX="331.0" layoutY="518.0" text="Nom " />
+      <Label layoutX="578.0" layoutY="517.0" text="Date " />
+      <DatePicker fx:id="iddate" layoutX="629.0" layoutY="514.0" />
+      <TextField fx:id="idnom" layoutX="377.0" layoutY="514.0" prefHeight="25.0" prefWidth="162.0" />
+      <Label layoutX="334.0" layoutY="681.0" text="Lieu " />
+      <TextField fx:id="idlieu" layoutX="377.0" layoutY="681.0" prefHeight="46.0" prefWidth="241.0" />
+      <Label layoutX="854.0" layoutY="517.0" text="Heure" />
+      <TextField fx:id="idheure" layoutX="903.0" layoutY="513.0" />
+      <Label layoutX="667.0" layoutY="616.0" text="Description " />
+      <TextArea fx:id="iddescr" layoutX="749.0" layoutY="616.0" prefHeight="130.0" prefWidth="308.0" />
+      <TableView fx:id="actionTable" layoutX="308.0" layoutY="105.0" prefHeight="370.0" prefWidth="792.0">
+         <columns>
+            <TableColumn fx:id="idColumn" prefWidth="48.0" text="Id" />
+            <TableColumn fx:id="nomColumn" minWidth="0.0" prefWidth="97.0" text="Nom" />
+            <TableColumn fx:id="descrColumn1" prefWidth="123.0" text="Type" />
+            <TableColumn fx:id="lieuColumn" prefWidth="105.0" text="Lieu" />
+            <TableColumn fx:id="dateColumn" prefWidth="103.0" text="Date" />
+            <TableColumn fx:id="timeColumn" minWidth="0.0" text="Heure" />
+            <TableColumn fx:id="descrColumn" prefWidth="235.0" text="Description" />
+         </columns>
+      </TableView>
+      <Button fx:id="idbuttmodif" layoutX="567.0" layoutY="770.0" mnemonicParsing="false" onAction="#handleModifier" prefHeight="43.0" prefWidth="200.0" style="-fx-background-radius: 30; -fx-background-color: #009688;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="idbuttsupp" layoutX="803.0" layoutY="770.0" mnemonicParsing="false" onAction="#handleSupprimer" prefHeight="43.0" prefWidth="200.0" style="-fx-background-radius: 30; -fx-background-color: #009688;" text="Supprimer" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="24.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="idtype" layoutX="377.0" layoutY="591.0" prefWidth="150.0" />
+      <Label layoutX="332.0" layoutY="595.0" prefHeight="17.0" prefWidth="33.0" text="Type" />
+   </children>
+</AnchorPane>
